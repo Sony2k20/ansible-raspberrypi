@@ -1,0 +1,8 @@
+---
+- name: Setup of raspberrypi
+  hosts: localhost
+  connection: local"
+  tasks:
+
+    - name: Install K3S
+      ansible.builtin.shell: curl -sfL https://get.k3s.io | K3S_KUBECONFONFIG_MODE="644" sh -s -

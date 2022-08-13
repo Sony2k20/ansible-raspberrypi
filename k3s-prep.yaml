@@ -8,9 +8,13 @@
       ansible.builtin.package:
         name:
           - git
-          - docker
           - iptables
         state: latest
+
+    - name: Install Docker
+      ansible.builtin.shell: |
+        curl -fsSL https://get.docker.com | sudo bash
+
 
     - name: Creating cmdline.txt with extra content
       copy:
